@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>MADEROME</title>
+  <link href="../mobile/www/style/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <H1>MADEROME</H1>
+  <p id="info"></p>
+</body>
+<script>
+  const ipc = require('electron').ipcRenderer;
+  ipc.on('display', (event, data) => {
+    document.getElementById("info").innerHTML = data; // logs out "Hello second window!"
+  })
+</script>
+
+</html>
