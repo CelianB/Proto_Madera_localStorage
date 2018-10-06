@@ -1,7 +1,7 @@
 "use strict";
+// Construit l'object JSON à partir des données saisie.
 const htmlToData = html => {
   let data = {};
-
   const titres = getTextContent(html.getElementsByTagName("h2"));
   const body = html.getElementsByTagName("tbody");
 

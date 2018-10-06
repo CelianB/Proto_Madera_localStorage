@@ -12,7 +12,7 @@ var app = {
 
   onDeviceReady: function() {
     this.receivedEvent("deviceready");
-    fetch("http://192.168.1.26:3000")
+    fetch("http://localhost:3000")
       .then(response => response.json())
       .then(data => {
         document.getElementById("info").innerHTML = dataToHtml.toTable(data);
@@ -25,11 +25,19 @@ var app = {
   }
 };
 
+// Ecoute des evenement 'offline' et o'nline'
 document.addEventListener("offline", () => setInternetStatus(false), false);
-document.addEventListener("online", () => {
-  sendData();
-  setInternetStatus(true)
-}, false);
+document.addEventListener(
+  "online",
+  () => {
+    if (document.getElementById("info").innerHTML != "") {
+      localStorage.setItem("data", htmlToData(document.getElementById("info")));
+      sendData();
+    }
+    setInternetStatus(true);
+  },
+  false
+);
 
 function setInternetStatus(status) {
   isOnline = status;
@@ -46,13 +54,13 @@ function onValidateData() {
   }
 }
 function sendData() {
-  fetch("http://192.168.1.26:3000", {
+  fetch("http://localhost:3000", {
     method: "post",
     body: localStorage.getItem("data"),
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-  })
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    }
+  });
 }
 app.initialize();

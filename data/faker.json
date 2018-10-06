@@ -6,7 +6,7 @@
       "codePostal": "59000",
       "marge": "0.2",
       "nom": "siège social",
-      "ville": "lille"
+      "ville": "nancy"
     },
     {
       "IDsite": 1,
@@ -14,7 +14,7 @@
       "codePostal": "40100",
       "marge": "0.17",
       "nom": "site de production",
-      "ville": "dax"
+      "ville": "paris"
     },
     {
       "IDsite": 2,
@@ -22,21 +22,21 @@
       "codePostal": "74000",
       "marge": "0.2",
       "nom": "site de production",
-      "ville": "annecy"
+      "ville": "metz"
     },
     {
       "IDsite": 3,
       "adresse": "10 rue de brest",
       "codePostal": "29000",
-      "marge": "0.2",
+      "marge": "1",
       "nom": "magasin",
-      "ville": "brest"
+      "ville": "nancy"
     },
     {
       "IDsite": 4,
       "adresse": "10 rue de wxmacon",
       "codePostal": "71000",
-      "marge": "0.2",
+      "marge": "0.999",
       "nom": "magasin",
       "ville": "macon"
     }
@@ -51,7 +51,7 @@
       "codePostal": "59000",
       "creation": "1537104024",
       "mail": "mail@mail.com",
-      "modifiction": "1537104024",
+      "modifiction": "1537104",
       "nom": "nom1",
       "password": "7fqofé\"é&",
       "pays": "france",

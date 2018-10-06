@@ -23,10 +23,12 @@
     localStorage.setItem("data", JSON.stringify(data))
   })
 
+  //Ecoute des evenement offline et online
   window.addEventListener('offline', () => setInternetStatus(false))
   window.addEventListener('online', () => {
     setInternetStatus(true);
-    // On envoit directement les données dès que l'on retrouve une conexion internet.
+    // On envoit les données dès que l'on retrouve une connexion internet.
+    localStorage.setItem("data", htmlToData(document.getElementById("info")));
     sendData();
   })
   
@@ -49,7 +51,7 @@
     }
   }
   function sendData(){
-    fetch("http://192.168.1.26:3000", {
+    fetch("http://localhost:3000", {
       method: "post",
       body: localStorage.getItem("data"),
       headers: {

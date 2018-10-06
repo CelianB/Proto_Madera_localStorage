@@ -25,8 +25,21 @@ var app = {
   }
 };
 
+// Ecoute des evenement 'offline' et o'nline'
 document.addEventListener("offline", () => setInternetStatus(false), false);
-document.addEventListener("online", () => setInternetStatus(true), false);
+document.addEventListener(
+  "online",
+  () => {
+    if (document.getElementById("info").innerHTML != "") {
+      localStorage.setItem("data", htmlToData(document.getElementById("info")));
+      if (localStorage.getItem("data") != {}) {
+        sendData();
+      }
+      setInternetStatus(true);
+    }
+  },
+  false
+);
 
 function setInternetStatus(status) {
   isOnline = status;
@@ -39,11 +52,17 @@ function onValidateData() {
   // localSave
   localStorage.setItem("data", htmlToData(document.getElementById("info")));
   if (isOnline) {
-    fetch("http://192.168.1.26:3000", {
-      method: "post",
-      body: localStorage.getItem("data"),
-      headers: { "Content-type": "application/json" }
-    });
+    sendData();
   }
+}
+function sendData() {
+  fetch("http://192.168.1.26:3000", {
+    method: "post",
+    body: localStorage.getItem("data"),
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    }
+  });
 }
 app.initialize();
