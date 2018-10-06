@@ -1,18 +1,18 @@
 # Prototype : Synchronisation de données
 
 ## Sommaire
-1. [Introduction](#Introduction)
-2. [Outils](#Outils)
-3. [Fonctionnement](#Fonctionnement)
-4. [Jeu de test](#Jeu-de-test)
-5. [Gestionnaire de paquets](#Gestionnaire-de-paquets)
-6. [Serveur web](#Serveur-web)
-7. [Visuel des applications](#Visuel-des-applications)
-8. [Gestion du hors connexion](#Gestion-du-hors-connexion)
-    * [Ecoute de la connexion](#Ecoute-de-la-connexion)
-    * [Sauvegarde local](#Sauvegarde-local)
-9. [Demonstration](#Demonstration)
-10. [Mise en place du projet](#Mise-en-place-du-projet)
+1. [Introduction](#introduction)
+2. [Outils](#outils)
+3. [Fonctionnement](#fonctionnement)
+4. [Jeu de test](#jeu-de-test)
+5. [Gestionnaire de paquets](#gestionnaire-de-paquets)
+6. [Serveur web](#serveur-web)
+7. [Visuel des applications](#visuel-des-applications)
+8. [Gestion du hors connexion](#gestion-du-hors-connexion)
+    * [Ecoute de la connexion](#ecoute-de-la-connexion)
+    * [Sauvegarde local](#sauvegarde-local)
+9. [Demonstration](#demonstration)
+10. [Mise en place du projet](#mise-en-place-du-projet)
 
 ## Introduction
 Suite à notre proposition technique où nous voulions implémenter un mode «hors ligne avec une synchronisation automatique », nous avons décidé de créer un prototype dans le but de nous rendre compte de l’impact réel de cette fonctionnalité sur le temps de développement.
