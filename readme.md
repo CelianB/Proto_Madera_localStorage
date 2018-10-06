@@ -185,7 +185,7 @@ Prérequis :
   - Installer Electron : ``npm install electron -g``
 
 Etapes :
-1. Cloner ce repository : ``git clone https://github.com/CelianB/Proto_IndexedDB.git`` dans un dossier vide
+1. Cloner ce repository : ``git clone https://github.com/CelianB/Proto_Madera_localStorage`` dans un dossier vide
 2. Installer les dépendances : ``npm install`` à l'emplacement du fichier package.json.
 3. La commande ``npm run strat`` va lancer le serveur nodeJs et l'appli cordova et Electron. Attention : Il faut bien configurer un emulateur Android avec le bon SDK (via AVD manager) ou un device android. Cordova va d'abord chercher à lancer l'application sur un Appareil (en USB : penssez à bien activer le debuggable par USB).
 
