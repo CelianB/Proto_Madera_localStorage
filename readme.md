@@ -1,6 +1,18 @@
 # Pototype : Synchronisation de données
 
 ## Sommaire
+1. [Introduction](#Introduction)
+2. [Outils](#Outils)
+3. [Fonctionnement](#Fonctionnement)
+4. [Jeu de test](#Jeu-de-test)
+5. [Gestionnaire de paquets](#Gestionnaire-de-paquets)
+6. [Serveur web](#Serveur-web)
+7. [Visuel des applications](#Visuel-des-applications)
+8. [Gestion du hors connexion](#Gestion-du-hors-connexion)
+    * [Ecoute de la connexion](#Ecoute-de-la-connexion)
+    * [Sauvegarde local](#Sauvegarde-local)
+9. [Demonstration](#Demonstration)
+10. [Mise en place du projet](#Mise-en-place-du-projet)
 
 ## Introduction
 Suite à notre proposition technique où nous voulions implémenter un mode «hors ligne avec une synchronisation automatique », nous avons décidé de créer un prototype dans le but de nous rendre compte de l’impact réel de cette fonctionnalité sur le temps de développement.
@@ -158,13 +170,21 @@ Cordova (sous Android) :
 }
 ```
 
-### Demonstration
+## Demonstration
 Demo Electron :
 ![Demo Electron](./docRessource/demoElectron.gif "Demo Electron")
 
 Demo Cordova (sous Android) :
 ![Demo Cordova](./docRessource/demoCordova.gif "Demo Cordova")
 
-### Mise en place du projet
+## Mise en place du projet
 
-1.  Cloner ce repository :
+Prérequis : 
+  - Installer node.js : https://nodejs.org/ : npm sera installé avec node.js.
+  - Avoir un SDK android supérieur à la version 7.0.0 : https://developer.android.com/studio/ (via les outils graphique d'Android Studio ou via les outils en ligne de commande).
+  - Installer Electron : ``npm install electron -g``
+
+Etapes :
+1. Cloner ce repository : ``git clone https://github.com/CelianB/Proto_IndexedDB.git`` dans un dossier vide
+2. Installer les dépendances : ``npm install`` à l'emplacement du fichier package.json.
+3. La commande ``npm run strat`` va lancer le serveur nodeJs et l'appli cordova et Electron. Attention : Il faut bien configurer un emulateur Android avec le bon SDK (via AVD manager) ou un device android. Cordova va d'abord chercher à lancer l'application sur un Appareil (en USB : penssez à bien activer le debuggable par USB).
