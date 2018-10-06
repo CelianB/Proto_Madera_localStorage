@@ -5,17 +5,59 @@
   <meta charset="UTF-8">
   <title>MADEROME</title>
   <link href="../mobile/www/style/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../mobile/www/js/htmlFormater.js"></script>
+  <script type="text/javascript" src="../mobile/www/js/dataFormater.js"></script>
 </head>
 
 <body>
-  <H1>MADEROME</H1>
+  <h1>MADEROME</h1>
+  <p>Accès à internet : <b><span id="internetStatus"></span></b></span></p>
   <p id="info"></p>
+  <input type="button" value="Valier les modifications" onclick="onValidateData()" />
 </body>
 <script>
   const ipc = require('electron').ipcRenderer;
+  let isOnline;
   ipc.on('display', (event, data) => {
-    document.getElementById("info").innerHTML = data; // logs out "Hello second window!"
+    document.getElementById("info").innerHTML = dataToHtml.toTable(data);
+    localStorage.setItem("data", JSON.stringify(data))
   })
+
+  window.addEventListener('offline', () => setInternetStatus(false))
+  window.addEventListener('online', () => {
+    setInternetStatus(true);
+    // On envoit directement les données dès que l'on retrouve une conexion internet.
+    sendData();
+  })
+  
+  setInternetStatus(navigator.onLine)
+
+  function setInternetStatus(status) {
+    isOnline = status;
+    document.getElementById("internetStatus").innerHTML = status
+      ? "OK"
+      : "Hors Ligne";
+  }
+
+  function onValidateData() {
+    // On sauvegarde les données localement (online ou offline)
+    localStorage.setItem("data", htmlToData(document.getElementById("info")));
+    //local save
+    if (isOnline) {
+      // Si on est en ligne on envoit directement les données
+      sendData();
+    }
+  }
+  function sendData(){
+    fetch("http://192.168.1.26:3000", {
+      method: "post",
+      body: localStorage.getItem("data"),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    })
+  }
 </script>
 
 </html>

@@ -1,5 +1,8 @@
 const { app, BrowserWindow } = require("electron");
-const dataToHtml = require("../mobile/www/js/dataFormater");
+
+
+// Stockage local des données : pas de BDD local type localStorage
+//const localStore = {};
 
 var fetch = require("node-fetch");
 // Keep a global reference of the window object, if you don't, the window will
@@ -26,7 +29,7 @@ function createWindow() {
     fetch("http://localhost:3000")
       .then(response => response.json())
       .then(data => {
-        win.webContents.send("display", dataToHtml.toTable(data));
+        win.webContents.send("display", data);
       });
   });
 }

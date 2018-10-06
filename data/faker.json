@@ -1,0 +1,100 @@
+{
+  "sites": [
+    {
+      "IDsite": 0,
+      "adresse": "10 rue de lille",
+      "codePostal": "59000",
+      "marge": "0.2",
+      "nom": "siège social",
+      "ville": "lille"
+    },
+    {
+      "IDsite": 1,
+      "adresse": "10 rue de dax",
+      "codePostal": "40100",
+      "marge": "0.17",
+      "nom": "site de production",
+      "ville": "dax"
+    },
+    {
+      "IDsite": 2,
+      "adresse": "10 rue de annecy",
+      "codePostal": "74000",
+      "marge": "0.2",
+      "nom": "site de production",
+      "ville": "annecy"
+    },
+    {
+      "IDsite": 3,
+      "adresse": "10 rue de brest",
+      "codePostal": "29000",
+      "marge": "0.2",
+      "nom": "magasin",
+      "ville": "brest"
+    },
+    {
+      "IDsite": 4,
+      "adresse": "10 rue de wxmacon",
+      "codePostal": "71000",
+      "marge": "0.2",
+      "nom": "magasin",
+      "ville": "macon"
+    }
+  ],
+  "users": [
+    {
+      "IDUser_Utilisateur": 0,
+      "IDsite": 1,
+      "IDtva": 1,
+      "IDuser": 0,
+      "actif": false,
+      "codePostal": "59000",
+      "creation": "1537104024",
+      "mail": "mail@mail.com",
+      "modifiction": "1537104024",
+      "nom": "nom1",
+      "password": "7fqofé\"é&",
+      "pays": "france",
+      "prenom": "prenom1",
+      "statut": "0",
+      "tel": "+336598784512",
+      "ville": "lille"
+    },
+    {
+      "IDUser_Utilisateur": 0,
+      "IDsite": 1,
+      "IDtva": 1,
+      "IDuser": 1,
+      "actif": false,
+      "codePostal": "59000",
+      "creation": "1537104024",
+      "mail": "mail@mail.com",
+      "modifiction": "1537104024",
+      "nom": "nom2",
+      "password": "7fqofé\"é&",
+      "pays": "france",
+      "prenom": "prenom2",
+      "statut": "0",
+      "tel": "+336598784512",
+      "ville": "lille"
+    },
+    {
+      "IDUser_Utilisateur": 0,
+      "IDsite": 1,
+      "IDtva": 1,
+      "IDuser": 2,
+      "actif": false,
+      "codePostal": "59000",
+      "creation": "1537104024",
+      "mail": "mail@mail.com",
+      "modifiction": "1537104024",
+      "nom": "nom3",
+      "password": "7fqofé\"é&",
+      "pays": "france",
+      "prenom": "prenom3",
+      "statut": "1",
+      "tel": "+336598784512",
+      "ville": "lille"
+    }
+  ]
+}
